@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code URL Input Page</title>
     <style>
-        /* Basic styles, keeping the previous clean look */
+        /* Basic styles for a clean, user-friendly look */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             text-align: center; 
@@ -22,7 +22,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 { 
-            color: #007bff; 
+            color: #007bff; /* Blue header */
             margin-bottom: 30px; 
             font-size: 1.5em;
         }
@@ -39,7 +39,7 @@
             padding: 10px 25px; 
             font-size: 1em; 
             cursor: pointer; 
-            background-color: #28a745; 
+            background-color: #28a745; /* Green button */
             color: white; 
             border: none; 
             border-radius: 6px; 
@@ -63,23 +63,23 @@
             var urlInput = document.getElementById('targetUrl');
             var url = urlInput.value.trim();
             
-            // Check if input is empty
+            // 檢查輸入是否為空
             if (url === "") {
-                alert("Please enter a valid URL."); // English alert
+                alert("Please enter a valid URL."); // 英文錯誤提示
                 urlInput.focus();
                 return;
             }
 
-            // Check for protocol and prepend https:// if missing
+            // 檢查協定，如果沒有則自動加上 https://
             if (!url.startsWith('http://') && !url.startsWith('https://')) {
                 url = 'https://' + url;
             }
 
-            // Execute the page redirection
+            // 執行頁面跳轉
             window.location.href = url;
         }
 
-        // Enable Enter key to trigger the redirection
+        // 啟用 Enter 鍵觸發跳轉
         document.getElementById('targetUrl').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault(); 
